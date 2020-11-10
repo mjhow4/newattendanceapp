@@ -5,9 +5,13 @@ class CaseForm(forms.ModelForm):
     class Meta:
         model = Case
         fields = [
-            'case_number',
+            'no',
+            'file_number',
+            'defendant_name',
+            'complainant',
+            'offense',
             'attorney',
-            'court_session',
             'plea_request',
-        ]
+        
+    ]
        

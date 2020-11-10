@@ -1,5 +1,49 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>All Cases</h1>
+<style>
+    body {background-color: lightseagreen;}
+    h1   {color: black;}
+    h1 {text-align: center;}
+    p    {color: black;}
+    </style>
+<h1>IN THE GENERAL COURT OF JUSTICE</h1>
+<h1>LOCATION: KINSTON,NC-------DISTRICT COURT DIVISION-------COUNTY OF LENOIR</h1>
+<h1>COURT DATE:----------------------------TIME:-----------------------------COURTROOM NUMBER:</h1>
+<p>NO.:----------FILE NUMBER:----------DEFENDANT NAME:----------COMPLAINANT:----------OFFENSE:----------
+ATTORNEY:----------PLEA REQUEST:</p>
+<button type="submit">Attorney</button> <br> <br>
+<button type="submit">Court Date</button> <br> <br>
+<button type="submit">Plea Request</button> <br> <br>
+
+<p><a href="{% url 'add_case' %}">Add New Case</a></p>
+
+<div class="flex flex-wrap">
+    {% for case in cases %}
+    <div class="w-33 pa3">
+      <h2>{{ case.file_number }}</h2>
+      
+      {% if case.attorney %}
+      <div class="flex">
+        <div class="pr2"><i class="icofont-ui-music"></i></div>
+        <div>{{ case.attorney }}</div>
+      </div>
+      {% endif %}
+  
+  
+      {% if case.defendant_name %}
+      <div class="flex">
+        <div class="pr2"><i class="icofont-ui-timer"></i></div>
+        <div>{{ case.defendant_name }}</div>
+      </div>
+      {% endif %}
+
+      <p>
+        <a href="{% url 'edit_case' pk=case.pk %}">Edit Case</a><br> 
+        <a class="red" href="{% url 'delete_case' pk=case.pk %}">Delete Case</a>
+      </p>
+
+    </div>
+    {% endfor %}
+</div>  
 {% endblock %}

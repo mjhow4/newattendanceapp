@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Delete Case</h1>
+
+<div>
+  <form action="{% url 'delete_case' pk=case.pk %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p>Are you sure you want to delete Case Number: {{ case.file_number }}?</p>
+    <div>
+      <button type="submit">Delete Case</button><br> <br>
+      <a href="{% url 'list_cases' %}">Cancel</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

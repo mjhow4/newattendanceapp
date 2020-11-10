@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Edit Case</h1>
+
+<div>
+  <form action="{% url 'edit_case' pk=case.pk %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div>
+      <button type="submit">Update Case</button> <br> <br>
+      <a href="{% url 'list_cases' %}">Cancel</a>
+    </div>
+  </form>
+</div>
+{% endblock %}
