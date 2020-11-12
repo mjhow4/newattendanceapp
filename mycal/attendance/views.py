@@ -9,6 +9,13 @@ def list_cases(request):
     return render(request, "attend\list_cases.html",
                   {"cases": cases})
 
+def index(request):
+    return render(request, "attend\index.html",)
+
+def signup(request):
+    return render(request, "attend\signup.html",)
+        
+
 def add_case(request):
     if request.method == 'GET':
         form = CaseForm()

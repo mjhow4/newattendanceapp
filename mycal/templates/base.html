@@ -11,16 +11,11 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 
-<body class="sans-serif pv3 ph2">
-    <div class="mw9 center">
+<body>
+    <div>
       {% block content %}
-      <nav class="menu">
-        <ul>
-            <li><a href="index.html">Home</a></li>	       
-            <li><a href="in-stock.html">Currently In Stock</a></li>	       
-            <li><a href="info.html">The Hours and Location</a></li>	
-        </ul>	 
-    </nav>
+  
       {% endblock %}
     </div>
+</body>
 </html>

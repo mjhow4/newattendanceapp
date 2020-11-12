@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .menu {text-align: right;}
+    body {background-color: lightgoldenrodyellow;}
+  </style>
+  <p class="menu"> <a href="{% url 'index' %}">Home</a> | <a href="{% url 'index' %}">Services</a> | <a href="{% url 'index' %}">Contact Us</a></p>
+<h1>Welcome to CourtPal!</h1>
+<h2>Enter Your Information Below to Sign up</h2>
+
+<p>
+    Name: <br> <br>
+    Title: (Defense Attorney, District Attorney, Court Clerk) <br> <br>
+    Bar Number: <br><br>
+    Email Address: <br> <br>
+    Password: <br> <br>
+    Renter Password:
+</p>
+
+<button onclick="window.location.href='{% url 'index' %}';">
+    Submit
+  </button> 
+
+{% endblock %}

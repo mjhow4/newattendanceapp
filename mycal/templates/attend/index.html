@@ -1,13 +1,23 @@
 {% extends "base.html" %}
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Court Cal</title>
-</head>
-<body>
-    <h1>Welcome to Court Cal</h1>
-    
-</body>
-</html>
+{% block content %}
+<style>
+  .menu {text-align: right;}
+  body {background-color: lightblue;}
+</style>
+<p class="menu"> <a href="{% url 'signup' %}">Home</a> | <a href="{% url 'signup' %}">Services</a> | <a href="{% url 'signup' %}">Contact Us</a></p>
+<h1>Welcome to CourtPal!</h1>
+<h3>Please Login or Signup</h3>
+
+<p>Enter Login ID: <br><br>
+Enter Password: </p>
+<button onclick="window.location.href='{% url 'list_cases' %}';">
+    Login
+  </button> <br>
+  <p>If you are not a Member, Please: </p>
+  <button onclick="window.location.href='{% url 'signup' %}';">
+    Signup
+  </button>
+
+{% endblock %}
+
