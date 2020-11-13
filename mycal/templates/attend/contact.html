@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .menu {text-align: right;}
+    body {background-color: rgb(245,245,245);}
+  </style>
+  <p class="menu"> <a href="{% url 'index' %}">Home</a> | <a href="{% url 'signup' %}">Membership</a> | <a href="{% url 'contact' %}">Contact Us</a></p>
+<h1>Contact Us</h1>
+
+<div>
+    We are CourtPal and We are Here to Help!
+    If you have any issues with our website or if you need a tutorial please do not hesitate to call
+    or email us at the contact information below.
+
+    <p>
+    CourtPal, Inc. <br>
+    Phone: 800-555-4Pal <br>
+    email: [help@courtpal.com]
+    </p>
+
+    
+</div>
+{% endblock %}

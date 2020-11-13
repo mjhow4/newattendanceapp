@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .right {text-align: right;}
+    body {background-color: rgb(245,245,245);}
+  </style>
+<p class="right">Defense Attorney View</p>
+<h1>Edit Case Entry</h1>
+
+<form>
+    <label for="attorneyname">Attorney of Record:</label><br>
+    <input type="text" id="attorneyname" name="attorneyname"><br> <br>
+    <label for="continuance">Continuance Request:</label><br>
+    <input type="date" id="continuance" name="continuance"><br> <br>
+    <label for="plea">Plea Request:</label><br>
+    <input type="text" id="plea" name="plea">
+  </form>
+
+<div>
+    <div> <br>
+      <button type="submit">Update Entry</button> <br> <br>
+      <a href="{% url 'lista_cases' %}">Cancel</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

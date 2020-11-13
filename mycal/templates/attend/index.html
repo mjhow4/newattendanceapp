@@ -3,16 +3,24 @@
 {% block content %}
 <style>
   .menu {text-align: right;}
-  body {background-color: lightblue;}
+  body {background-color: rgb(245,245,245);}
 </style>
-<p class="menu"> <a href="{% url 'signup' %}">Home</a> | <a href="{% url 'signup' %}">Services</a> | <a href="{% url 'signup' %}">Contact Us</a></p>
+<p class="menu"> <a href="{% url 'index' %}">Home</a> | <a href="{% url 'signup' %}">Membership</a> | <a href="{% url 'contact' %}">Contact Us</a></p>
 <h1>Welcome to CourtPal!</h1>
 <h3>Please Login or Signup</h3>
 
-<p>Enter Login ID: <br><br>
-Enter Password: </p>
+<form>
+  <label for="login">Enter Login ID:</label><br>
+  <input type="email" id="login" name="login"><br> <br>
+  <label for="password">Enter Password:</label><br>
+  <input type="password" id="password" name="password"><br> <br>
+</form>
 <button onclick="window.location.href='{% url 'list_cases' %}';">
-    Login
+    Court Official Login
+  </button>
+
+  <button onclick="window.location.href='{% url 'lista_cases' %}';">
+    Defense Attorney Login
   </button> <br>
   <p>If you are not a Member, Please: </p>
   <button onclick="window.location.href='{% url 'signup' %}';">

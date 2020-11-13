@@ -9,11 +9,22 @@ def list_cases(request):
     return render(request, "attend\list_cases.html",
                   {"cases": cases})
 
+def lista_cases(request):
+    cases = Case.objects.all()
+    return render(request, "attend\lista_cases.html",
+                  {"cases": cases})
+
 def index(request):
     return render(request, "attend\index.html",)
 
 def signup(request):
     return render(request, "attend\signup.html",)
+
+def edita_case(request):
+    return render(request, "attend\edita_case.html",)
+
+def contact(request):
+    return render(request, "attend\contact.html",)
         
 
 def add_case(request):
@@ -41,6 +52,7 @@ def edit_case(request, pk):
         "form": form,
         "case": case,
     })
+
 
 def delete_case(request, pk):
     case = get_object_or_404(Case, pk=pk)

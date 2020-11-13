@@ -3,20 +3,26 @@
 {% block content %}
 <style>
     .menu {text-align: right;}
-    body {background-color: lightgoldenrodyellow;}
+    body {background-color: rgb(245,245,245);}
   </style>
-  <p class="menu"> <a href="{% url 'index' %}">Home</a> | <a href="{% url 'index' %}">Services</a> | <a href="{% url 'index' %}">Contact Us</a></p>
-<h1>Welcome to CourtPal!</h1>
-<h2>Enter Your Information Below to Sign up</h2>
+  <p class="menu"> <a href="{% url 'index' %}">Home</a> | <a href="{% url 'signup' %}">Membership</a> | <a href="{% url 'contact' %}">Contact Us</a></p>
+<h1>Signup to CourtPal!</h1>
+<h2>Enter Your Information Below to Become a Member.</h2>
 
-<p>
-    Name: <br> <br>
-    Title: (Defense Attorney, District Attorney, Court Clerk) <br> <br>
-    Bar Number: <br><br>
-    Email Address: <br> <br>
-    Password: <br> <br>
-    Renter Password:
-</p>
+<form>
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name"><br> <br>
+    <label for="title">Title:</label><br>
+    <input type="text" id="title" name="title"><br> <br>
+    <label for="barnumber">Bar Number:</label><br>
+    <input type="barnumber" id="barnumber" name="barnumber"><br> <br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br> <br>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password"><br> <br>
+    <label for="password">Confirm Password:</label><br>
+    <input type="password" id="password" name="password"><br> <br>
+  </form>
 
 <button onclick="window.location.href='{% url 'index' %}';">
     Submit

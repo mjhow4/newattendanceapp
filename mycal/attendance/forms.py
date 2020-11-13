@@ -7,11 +7,13 @@ class CaseForm(forms.ModelForm):
         fields = [
             'no',
             'file_number',
-            'defendant_name',
+            'defendant',
             'complainant',
             'offense',
             'attorney',
+            'court_date',
             'plea_request',
+            'response_by',
         
     ]
        

@@ -9,11 +9,11 @@
     .right {text-align: right;}
     .left {text-align: left;}
     .center {text-align: center;}
-    .form {font-size: 5px;}
+    
 
 </style>
-<p class="right"><a href="{% url 'add_case' %}">New Entry</a> | <a href="{% url 'index' %}">Logout</a></p>
-<p class="right">Court Official View</p>
+<p class="right"><a href="{% url 'index' %}">Logout</a></p>
+<p class="right">Defense Attorney View</p>
 
 
 <h2>-- IN THE GENERAL COURT OF JUSTICE --</h2>
@@ -28,11 +28,10 @@
         <th>COMPLAINANT</th>
         <th>OFFENSE</th>
         <th>ATTORNEY</th>
-        <th>COURT DATE</th>
+        <th>CONTINUANCE REQUEST</th>
         <th>PLEA REQUEST</th>
         <th>OFFICIAL REPONSE</th>
-        <th>EDIT-DELETE</th>
-        <th>PAL</th>
+        <th>EDIT ENTRY</th>
     </thead>
     <tr>
         <td>
@@ -118,19 +117,9 @@
         </td>
         <td>
             {% for case in cases %}
-                    <p><a href="{% url 'edit_case' pk=case.pk %}">Edit</a> | <a href="{% url 'delete_case' pk=case.pk %}">Delete</a></p>
+                    <p><a href="{% url 'edita_case' %}">Edit</a></p>
             {% endfor %}
         </td>
-        <td>
-            {% for case in cases %}
-                <form class="form">
-                    <label for="attendance"></label><br>
-                    <input type="color" id="attendance" name="attendance" value="#800080"><br> <br>
-                    
-                </form>
-            {% endfor %}
-        </td>
-   
         
     </tr>
     
