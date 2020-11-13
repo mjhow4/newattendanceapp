@@ -9,6 +9,11 @@
     .right {text-align: right;}
     .left {text-align: left;}
     .center {text-align: center;}
+    .form {font-size: 3px;}
+    .edit {font-size: .7pc;}
+    .form {font-size: 3px;}
+   
+
     
 
 </style>
@@ -28,10 +33,13 @@
         <th>COMPLAINANT</th>
         <th>OFFENSE</th>
         <th>ATTORNEY</th>
-        <th>CONTINUANCE REQUEST</th>
+        <th>COURT DATE</th>
         <th>PLEA REQUEST</th>
         <th>OFFICIAL REPONSE</th>
-        <th>EDIT ENTRY</th>
+        <th>REQUEST</th>
+        <th>PAL</th>
+
+       
     </thead>
     <tr>
         <td>
@@ -117,7 +125,15 @@
         </td>
         <td>
             {% for case in cases %}
-                    <p><a href="{% url 'edita_case' %}">Edit</a></p>
+                    <p class="edit"><a href="{% url 'edita_case' %}">Request</a></p>
+            {% endfor %}
+        </td>
+        <td>
+            {% for case in cases %}
+                <form class="form">
+                    <label for="attendance"></label><br>
+                    <input type="color" id="attendance" name="attendance" value="#800080"><br> <br>
+                </form>
             {% endfor %}
         </td>
         

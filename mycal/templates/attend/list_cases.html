@@ -9,7 +9,10 @@
     .right {text-align: right;}
     .left {text-align: left;}
     .center {text-align: center;}
-    .form {font-size: 5px;}
+    .form {font-size: 3px;}
+    .purple {border: purple;}
+    .purple {background-color: purple;}
+    .edit {font-size: .65pc;}
 
 </style>
 <p class="right"><a href="{% url 'add_case' %}">New Entry</a> | <a href="{% url 'index' %}">Logout</a></p>
@@ -32,7 +35,10 @@
         <th>PLEA REQUEST</th>
         <th>OFFICIAL REPONSE</th>
         <th>EDIT-DELETE</th>
-        <th>PAL</th>
+        <th>P</th>
+        <th>A</th>
+        <th>L</th>
+       
     </thead>
     <tr>
         <td>
@@ -118,19 +124,35 @@
         </td>
         <td>
             {% for case in cases %}
-                    <p><a href="{% url 'edit_case' pk=case.pk %}">Edit</a> | <a href="{% url 'delete_case' pk=case.pk %}">Delete</a></p>
+                    <p class="edit"><a href="{% url 'edit_case' pk=case.pk %}">Edit</a> | <a href="{% url 'delete_case' pk=case.pk %}">Delete</a></p>
             {% endfor %}
         </td>
         <td>
             {% for case in cases %}
                 <form class="form">
                     <label for="attendance"></label><br>
-                    <input type="color" id="attendance" name="attendance" value="#800080"><br> <br>
-                    
+                    <input type="checkbox" id="attendance" name="attendance"><br> <br>
                 </form>
             {% endfor %}
         </td>
-   
+        <td>
+            {% for case in cases %}
+                <form class="form">
+                    <label for="attendance"></label><br>
+                    <input type="checkbox" id="attendance" name="attendance"><br> <br>
+                </form>
+            {% endfor %}
+        </td>
+        <td>
+            {% for case in cases %}
+                <form class="form">
+                    <label for="attendance"></label><br>
+                    <input type="checkbox" id="attendance" name="attendance"><br> <br>
+                </form>
+            {% endfor %}
+        </td>
+        
+
         
     </tr>
     
