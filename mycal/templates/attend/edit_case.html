@@ -1,16 +1,39 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Edit Case</h1>
+<style>
+    .right {text-align: right;}
+    body {background-color: rgb(245,245,245);}
+    .hide {opacity: 1;}
+  </style>
+<h1>Edit Case Entry</h1>
 
 <div>
   <form action="{% url 'edit_case' pk=case.pk %}" method="POST">
     {% csrf_token %}
-    {{ form.as_p }}
+    <!-- {{ form.as_p }} -->
+    <div>
+        NO. {{ form.no }} <br><br>
+        FILE NUMBER: {{ form.file_number }}  <br> <br>
+        DEFENDANT:   {{ form.defendant }}  <br>  <br>
+        COMPLAINANT: {{ form.complainant }}  <br> <br>
+        OFFENSE:    {{ form.offense }}  <br> <br>
+        ATTORNEY:    {{ form.attorney }}  <br> <br>
+        COURT DATE: {{ form.court_date }}  <br> <br>
+        RESPONSE:   {{ form.response_by }}  <br> <br>
+        
+    </div>
+
     <div>
       <button type="submit">Update Case</button> <br> <br>
       <a href="{% url 'list_cases' %}">Cancel</a>
     </div>
   </form>
+  <div class="hide">
+    {{ form.defense_name }}
+    {{ form.continuance }}
+    {{ form.plea_request }}
+
+  </div>
 </div>
 {% endblock %}

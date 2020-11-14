@@ -20,8 +20,8 @@ def index(request):
 def signup(request):
     return render(request, "attend\signup.html",)
 
-def edita_case(request):
-    return render(request, "attend\edita_case.html",)
+# def edita_case(request):
+#     return render(request, "attend\edita_case.html",)
 
 def contact(request):
     return render(request, "attend\contact.html",)
@@ -49,6 +49,21 @@ def edit_case(request, pk):
             return redirect(to='list_cases')
 
     return render(request, "attend/edit_case.html", {
+        "form": form,
+        "case": case,
+    })
+
+def edita_case(request, pk):
+    case = get_object_or_404(Case, pk=pk)
+    if request.method == 'GET':
+        form = CaseForm(instance=case)
+    else:
+        form = CaseForm(data=request.POST, instance=case)
+        if form.is_valid():
+            form.save()
+            return redirect(to='lista_cases')
+
+    return render(request, "attend/edita_case.html", {
         "form": form,
         "case": case,
     })

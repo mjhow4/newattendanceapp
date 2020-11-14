@@ -4,11 +4,12 @@
 <style>
     .right {text-align: right;}
     body {background-color: rgb(245,245,245);}
+    .hide {opacity: 0;}
   </style>
 <p class="right">Defense Attorney View</p>
-<h1>Declare Attorney of Record</h1>
+<!-- <h1>Declare Attorney of Record</h1>
 
-<form>
+<!-- <form>
     <label for="attorneyname">Attorney of Record:</label><br>
     <input type="text" id="attorneyname" name="attorneyname"><br>
   </form>
@@ -23,9 +24,43 @@
   </form>
 <div>
     <div> <br>
-      <button type="submit">Submit</button> <br> <br>
+        <button onclick="window.location.href='{% url 'lista_cases' %}';">
+            Submit
+          </button> <br> <br>
       <a href="{% url 'lista_cases' %}">Cancel</a>
     </div>
   </form>
+</div> --> 
+<div>
+    <form action="{% url 'edit_case' pk=case.pk %}" method="POST">
+      {% csrf_token %}
+      <!-- {{ form.as_p }} -->
+      <h1>Declare Attorney of Record</h1>
+      Attorney of Record: {{ form.defense_name }}
+      <h1>Requests</h1>
+      Continuance Request: {{ form.continuance }} <br> <br>
+      Plea Request: {{ form.plea_request }}
+
+
+      <div> <br>
+        <!-- <button type="submit">Update Case</button> <br> <br> -->
+        <button onclick="window.location.href='{% url 'lista_cases' %}';">
+            Submit
+          </button> <br><br>
+        <a href="{% url 'lista_cases' %}">Cancel</a>
+    </form>
+
+        <br><br><br><br><br><br>
+
+      <div class="hide">
+        {{ form.no }}
+        {{ form.file_number }}
+        {{ form.defendant }}
+        {{ form.offense }}
+        {{ form.attorney }}
+        {{ form.court_date }}
+        {{ form.response_by }}
+        {{ form.complainant }}
+      </div>
 </div>
 {% endblock %}

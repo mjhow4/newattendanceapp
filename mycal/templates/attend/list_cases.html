@@ -32,8 +32,9 @@
         <th>OFFENSE</th>
         <th>ATTORNEY</th>
         <th>COURT DATE</th>
+        <th>CONT. REQUEST</th>
         <th>PLEA REQUEST</th>
-        <th>OFFICIAL REPONSE</th>
+        <th>RESPONSE</th>
         <th>EDIT-DELETE</th>
         <th>P</th>
         <th>A</th>
@@ -92,6 +93,9 @@
                 <div class="flex">
                 <div>{{ case.attorney }}</div>
                 </div>
+                {% else %}
+                <div>{{ case.defense_name }}</div>
+                </div>
                 {% endif %}
             {% endfor %}
         </td>
@@ -100,6 +104,15 @@
                 {% if case.court_date %}
                 <div class="flex">
                 <div>{{ case.court_date }}</div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </td>
+        <td>
+            {% for case in cases %}
+                {% if case.continuance %}
+                <div class="flex">
+                <div>{{ case.continuance }}</div>
                 </div>
                 {% endif %}
             {% endfor %}

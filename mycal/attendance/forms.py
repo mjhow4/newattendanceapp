@@ -14,6 +14,16 @@ class CaseForm(forms.ModelForm):
             'court_date',
             'plea_request',
             'response_by',
-        
+            'defense_name',
+            'continuance',
     ]
-       
+
+# class DefenseForm(forms.ModelForm):
+#     class Meta:
+#         model = Defense
+#         fields = [
+#             'defense_name',
+#             'continuance',
+#             'plea',
+        
+#     ]

@@ -23,7 +23,7 @@ urlpatterns = [
     path('list/', attend_views.list_cases, name='list_cases'),
     path('lista/', attend_views.lista_cases, name='lista_cases'),
     path('contact/', attend_views.contact, name='contact'),
-    path('edita/', attend_views.edita_case, name='edita_case'),
+    # path('edita/', attend_views.edita_case, name='edita_case'),
     path('', attend_views.index, name='index'),
     path('signup/', attend_views.signup, name='signup'),
     path('attend/add/', attend_views.add_case, name='add_case'),
@@ -33,5 +33,8 @@ urlpatterns = [
     path('attend/<int:pk>/edit/',
          attend_views.edit_case,
          name='edit_case'),
+        path('attend/<int:pk>/edita/',
+         attend_views.edita_case,
+         name='edita_case'),
     
 ]
