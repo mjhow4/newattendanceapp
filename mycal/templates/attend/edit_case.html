@@ -4,36 +4,42 @@
 <style>
     .right {text-align: right;}
     body {background-color: rgb(245,245,245);}
-    .hide {opacity: 1;}
+    .hide {opacity: 0;}
   </style>
-<h1>Edit Case Entry</h1>
+<p class="right">Court Official View</p>
+<h2>Edit Case Entry</h2>
 
 <div>
-  <form action="{% url 'edit_case' pk=case.pk %}" method="POST">
-    {% csrf_token %}
-    <!-- {{ form.as_p }} -->
-    <div>
-        NO. {{ form.no }} <br><br>
-        FILE NUMBER: {{ form.file_number }}  <br> <br>
-        DEFENDANT:   {{ form.defendant }}  <br>  <br>
-        COMPLAINANT: {{ form.complainant }}  <br> <br>
-        OFFENSE:    {{ form.offense }}  <br> <br>
-        ATTORNEY:    {{ form.attorney }}  <br> <br>
-        COURT DATE: {{ form.court_date }}  <br> <br>
-        RESPONSE:   {{ form.response_by }}  <br> <br>
-        
-    </div>
+    <form action="{% url 'edit_case' pk=case.pk %}" method="POST">
+      {% csrf_token %}
+      <!-- {{ form.as_p }} -->
+      No. {{ form.no }} <br><br>
+      FILE NUMBER: {{ form.file_number }} <br><br>
+      DEFENDANT: {{ form.defendant }} <br><br>
+      OFFENSE: {{ form.offense }} <br><br>
+      ATTORNEY: {{ form.attorney }} <br><br>
+      COURT DATE: {{ form.court_date }} <br><br>
+      RESPONSE: {{ form.response_by }} <br><br>
+      COMPLAINANT: {{ form.complainant }} <br><br>
+  
 
-    <div>
-      <button type="submit">Update Case</button> <br> <br>
-      <a href="{% url 'list_cases' %}">Cancel</a>
-    </div>
-  </form>
-  <div class="hide">
-    {{ form.defense_name }}
-    {{ form.continuance }}
-    {{ form.plea_request }}
 
-  </div>
+      <div> <br>
+        <!-- <button type="submit">Update Case</button> <br> <br> -->
+        <button onclick="window.location.href='{% url 'list_cases' %}';">
+            Submit
+          </button> <br><br>
+        <a href="{% url 'list_cases' %}">Cancel</a>
+    </form>
+
+        <br><br><br><br><br><br>
+
+      <div class="hide">
+        <h1>Declare Attorney of Record</h1>
+        Attorney of Record: {{ form.defense_name }}
+        <h1>Requests</h1>
+        Continuance Request: {{ form.continuance }} <br> <br>
+        Plea Request: {{ form.plea_request }}
+      </div>
 </div>
 {% endblock %}
