@@ -34,8 +34,8 @@
         <th>ATTORNEY</th>
         <!-- <th>COURT DATE</th> -->
         <th>CONTINUANCE</th>
-        <th>DISPOSITION</th>
         <th>PAL</th>
+        <th>DISPOSITION</th>
 
        
     </thead>
@@ -115,6 +115,15 @@
                 {% endif %}
             {% endfor %}
         </td>
+
+        <td>
+            {% for case in cases %}
+                <form class="form">
+                    <label for="attendance"></label><br>
+                    <input type="color" id="attendance" name="attendance" value="#800080"><br> <br>
+                </form>
+            {% endfor %}
+        </td>
         <td>
             {% for case in cases %}
                 {% if case.disposition %}
@@ -122,14 +131,6 @@
                 <div>{{ case.disposition }}</div>
                 </div>
                 {% endif %}
-            {% endfor %}
-        </td>
-        <td>
-            {% for case in cases %}
-                <form class="form">
-                    <label for="attendance"></label><br>
-                    <input type="color" id="attendance" name="attendance" value="#800080"><br> <br>
-                </form>
             {% endfor %}
         </td>
         
