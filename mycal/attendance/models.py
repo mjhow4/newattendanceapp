@@ -11,6 +11,7 @@ class Case(models.Model):
     court_date = models.DateField(null=True, blank=True)
     plea_request = models.TextField(max_length=200, null=True, blank=True)
     response_by = models.TextField(max_length=200, null=True, blank=True)
+    disposition = models.TextField(max_length=200, null=True, blank=True)
     defense_name = models.CharField(max_length=50, null=True, blank=True)
     continuance = models.DateField(null=True, blank=True)
 

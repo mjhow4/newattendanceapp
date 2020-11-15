@@ -14,11 +14,19 @@ def lista_cases(request):
     return render(request, "attend\lista_cases.html",
                   {"cases": cases})
 
+def listp_cases(request):
+    cases = Case.objects.all()
+    return render(request, "attend\listp_cases.html",
+                  {"cases": cases})
+
 def index(request):
     return render(request, "attend\index.html",)
 
 def signup(request):
     return render(request, "attend\signup.html",)
+
+def submit(request):
+    return render(request, "attend\submit.html",)
 
 # def edita_case(request):
 #     return render(request, "attend\edita_case.html",)
@@ -46,7 +54,7 @@ def edit_case(request, pk):
         form = CaseForm(data=request.POST, instance=case)
         if form.is_valid():
             form.save()
-            return redirect(to='list_cases')
+            return redirect(to='submit')
 
     return render(request, "attend/edit_case.html", {
         "form": form,
@@ -62,6 +70,8 @@ def edita_case(request, pk):
         if form.is_valid():
             form.save()
             return redirect(to='lista_cases')
+           
+
 
     return render(request, "attend/edita_case.html", {
         "form": form,

@@ -16,6 +16,7 @@ class CaseForm(forms.ModelForm):
             'response_by',
             'defense_name',
             'continuance',
+            'disposition',
     ]
 
 # class DefenseForm(forms.ModelForm):

@@ -5,9 +5,16 @@
   .menu {text-align: right;}
   body {background-color: rgb(245,245,245);}
 </style>
-<p class="menu"> <a href="{% url 'index' %}">Home</a> | <a href="{% url 'signup' %}">Membership</a> | <a href="{% url 'contact' %}">Contact Us</a></p>
+<p class="menu"> <a href="{% url 'index' %}">Home</a> | <a href="{% url 'listp_cases' %}">Public</a> | <a href="{% url 'signup' %}">Membership</a> | <a href="{% url 'contact' %}">Contact Us</a></p>
 <h1>Welcome to CourtPal!</h1>
-<h3>Please Login or Signup</h3>
+
+Access the Public Calendar View Here: 
+<button onclick="window.location.href='{% url 'listp_cases' %}';">
+  Public Calendar View
+</button>
+
+<h2>Attorneys and Court Clerks <br>
+  Please Login or Signup</h2>
 
 <form>
   <label for="login">Enter Login ID:</label><br>

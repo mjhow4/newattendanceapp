@@ -13,13 +13,11 @@
     .edit {font-size: .7pc;}
     .form {font-size: 3px;}
     .table {margin-left: auto; margin-right: auto;}
+    .menu {text-align: right;}
    
-
-    
-
 </style>
-<p class="right"><a href="{% url 'index' %}">Logout</a></p>
-<p class="right">Defense Attorney View</p>
+<p class="menu"> <a href="{% url 'index' %}">Home</a> | <a href="{% url 'listp_cases' %}">Public</a> | <a href="{% url 'signup' %}">Membership</a> | <a href="{% url 'contact' %}">Contact Us</a></p>
+<p class="right">Public Calendar View</p>
 
 
 <h2>-- IN THE GENERAL COURT OF JUSTICE --</h2>
@@ -35,12 +33,10 @@
         <th>OFFENSE</th>
         <th>ATTORNEY</th>
         <!-- <th>COURT DATE</th> -->
-        <th>CONT. REQUEST</th>
-        <th>PLEA REQUEST</th>
-        <th>RESPONSE</th>
-        <th>REQUEST</th>
+        <th>CONTINUANCE</th>
+        <th>DISPOSITION</th>
         <th>PAL</th>
-        <th>DISP.</th>
+
        
     </thead>
     <tr>
@@ -91,12 +87,12 @@
         </td>
         <td>
             {% for case in cases %}
-                {% if case.defense_name %}
+                {% if case.attorney %}
                 <div class="flex">
-                <div>{{ case.defense_name }}</div>
+                <div>{{ case.attorney }}</div>
                 </div>
                 {% else %}
-                <div>{{ case.attorney }}</div>
+                <div>{{ case.defense_name }}</div>
                 </div>
                 {% endif %}
             {% endfor %}
@@ -121,28 +117,13 @@
         </td>
         <td>
             {% for case in cases %}
-                {% if case.plea_request %}
+                {% if case.disposition %}
                 <div class="flex">
-                <div>{{ case.plea_request }}</div>
+                <div>{{ case.disposition }}</div>
                 </div>
                 {% endif %}
             {% endfor %}
         </td>
-        <td>
-            {% for case in cases %}
-                {% if case.response_by %}
-                <div class="flex">
-                <div>{{ case.response_by }}</div>
-                </div>
-                {% endif %}
-            {% endfor %}
-        </td>
-        <td>
-            {% for case in cases %}
-                    <p class="edit"><a href="{% url 'edita_case' pk=case.pk %}">Request</a></p>
-            {% endfor %}
-        </td>
-
         <td>
             {% for case in cases %}
                 <form class="form">
@@ -151,85 +132,9 @@
                 </form>
             {% endfor %}
         </td>
-        <td>
-            {% for case in cases %}
-                {% if case.disposition %}
-                <div class="flex">
-                <div>{{ case.disposition }}</div>
-                </div>
-                {% endif %}
-            {% endfor %}
-        </td>
         
     </tr>
     
 </table>
 
-<!-- <div class="flex flex-wrap">
-    {% for case in cases %}
-      
-
-      {% if case.no %}
-      <div class="flex">
-        <div>No. {{ case.no }}</div>
-      </div>
-      {% endif %}
-
-      {% if case.file_number %}
-      <div class="flex">
-        <div>File Number: {{ case.file_number }}</div>
-      </div>
-      {% endif %}
-
-      {% if case.defendant_name %}
-      <div class="flex">
-        <div>Defendant Name: {{ case.defendant_name }}</div>
-      </div>
-      {% endif %}
-
-      {% if case.complainant %}
-      <div class="flex">
-        <div>Complainant: {{ case.complainant }}</div>
-      </div>
-      {% endif %}
-
-      {% if case.offense %}
-      <div class="flex">
-        <div>Offense: {{ case.offense }}</div>
-      </div>
-      {% endif %}
-      
-      {% if case.attorney %}
-      <div class="flex">
-        <div>Attorney:  {{ case.attorney }}</div>
-      </div>
-      {% endif %}
-
-      {% if case.continuance_request %}
-      <div class="flex">
-        <div>Continuance Request:  {{ case.continuance_request }}</div>
-      </div>
-      {% endif %}
-
-  
-      {% if case.plea_request %}
-      <div class="flex">
-        <div>Plea Request: {{ case.plea_request }}</div>
-      </div>
-      {% endif %}
-
-      {% if case.response_by %}
-      <div class="flex">
-        <div>Approved/Denied By: {{ case.response_by }}</div>
-      </div>
-      {% endif %}
-     
-
-      <p>
-        <p><a href="{% url 'edit_case' pk=case.pk %}">Edit Case</a> | <a href="{% url 'delete_case' pk=case.pk %}">Delete Case</a></p>
-      </p>
-
-    </div>
-    {% endfor %} -->
-<!-- </div>   -->
 {% endblock %}

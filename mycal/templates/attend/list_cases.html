@@ -13,6 +13,7 @@
     .purple {border: purple;}
     .purple {background-color: purple;}
     .edit {font-size: .65pc;}
+    .table {margin-left: auto; margin-right: auto;}
 
 </style>
 <p class="right"><a href="{% url 'add_case' %}">New Entry</a> | <a href="{% url 'index' %}">Logout</a></p>
@@ -23,7 +24,7 @@
 <h2>LOCATION: KINSTON, NC -- DISTRICT COURT DIVISION -- COUNTY OF LENOIR</h2>
 <h2>COURT DATE: 11/13/20 -- TIME: 02:00 PM -- COURTROOM NUMBER: DCR1</h2>
 
-<table border="1">
+<table class="table" border="1">
     <thead>
         <th>NO.</th>
         <th>FILE NUMBER</th>
@@ -31,14 +32,15 @@
         <th>COMPLAINANT</th>
         <th>OFFENSE</th>
         <th>ATTORNEY</th>
-        <th>COURT DATE</th>
+        <!-- <th>COURT DATE</th> -->
         <th>CONT. REQUEST</th>
         <th>PLEA REQUEST</th>
         <th>RESPONSE</th>
-        <th>EDIT-DELETE</th>
+        <th>ALTER</th>
         <th>P</th>
         <th>A</th>
         <th>L</th>
+        <th>DISP.</th>
        
     </thead>
     <tr>
@@ -99,7 +101,7 @@
                 {% endif %}
             {% endfor %}
         </td>
-        <td>
+        <!-- <td>
             {% for case in cases %}
                 {% if case.court_date %}
                 <div class="flex">
@@ -107,7 +109,7 @@
                 </div>
                 {% endif %}
             {% endfor %}
-        </td>
+        </td> -->
         <td>
             {% for case in cases %}
                 {% if case.continuance %}
@@ -140,6 +142,7 @@
                     <p class="edit"><a href="{% url 'edit_case' pk=case.pk %}">Edit</a> | <a href="{% url 'delete_case' pk=case.pk %}">Delete</a></p>
             {% endfor %}
         </td>
+
         <td>
             {% for case in cases %}
                 <form class="form">
@@ -162,6 +165,15 @@
                     <label for="attendance"></label><br>
                     <input type="checkbox" id="attendance" name="attendance"><br> <br>
                 </form>
+            {% endfor %}
+        </td>
+        <td>
+            {% for case in cases %}
+                {% if case.disposition %}
+                <div class="flex">
+                <div>{{ case.disposition }}</div>
+                </div>
+                {% endif %}
             {% endfor %}
         </td>
         

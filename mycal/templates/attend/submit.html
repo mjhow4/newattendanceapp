@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .menu {text-align: right;}
+    body {background-color: rgb(245,245,245);}
+
+  </style>
+  <p class="menu"> <a href="{% url 'index' %}">Home</a> | <a href="{% url 'signup' %}">Membership</a> | <a href="{% url 'contact' %}">Contact Us</a></p>
+<h1>We Have Received Your Submission!</h1>
+
+<div>
+    To continue please select the appropriate view:
+    <button onclick="window.location.href='{% url 'list_cases' %}';">
+        Court Official View
+      </button>
+    
+      <button onclick="window.location.href='{% url 'lista_cases' %}';">
+        Defense Attorney View
+      </button> <br><br>
+
+    If You Are Finished Please:
+    <button onclick="window.location.href='{% url 'index' %}';">
+        Logout
+      </button> <br>
+    
+</div>
+{% endblock %}

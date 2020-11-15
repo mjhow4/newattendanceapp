@@ -21,14 +21,13 @@
       COURT DATE: {{ form.court_date }} <br><br>
       RESPONSE: {{ form.response_by }} <br><br>
       COMPLAINANT: {{ form.complainant }} <br><br>
+      DISPOSITION: {{ form.disposition }} <br><br>
   
 
 
       <div> <br>
         <!-- <button type="submit">Update Case</button> <br> <br> -->
-        <button onclick="window.location.href='{% url 'list_cases' %}';">
-            Submit
-          </button> <br><br>
+        <button type="submit">Submit</button><br> <br>
         <a href="{% url 'list_cases' %}">Cancel</a>
     </form>
 

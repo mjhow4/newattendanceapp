@@ -44,9 +44,7 @@
 
       <div> <br>
         <!-- <button type="submit">Update Case</button> <br> <br> -->
-        <button onclick="window.location.href='{% url 'lista_cases' %}';">
-            Submit
-          </button> <br><br>
+        <button type="submit">Submit</button><br> <br>
         <a href="{% url 'lista_cases' %}">Cancel</a>
     </form>
 
@@ -61,6 +59,7 @@
         {{ form.court_date }}
         {{ form.response_by }}
         {{ form.complainant }}
+        {{ form.disposition }}
       </div>
 </div>
 {% endblock %}

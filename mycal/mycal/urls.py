@@ -22,6 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('list/', attend_views.list_cases, name='list_cases'),
     path('lista/', attend_views.lista_cases, name='lista_cases'),
+    path('listp/', attend_views.listp_cases, name='listp_cases'),
+    path('submit/', attend_views.submit, name='submit'),
     path('contact/', attend_views.contact, name='contact'),
     # path('edita/', attend_views.edita_case, name='edita_case'),
     path('', attend_views.index, name='index'),
