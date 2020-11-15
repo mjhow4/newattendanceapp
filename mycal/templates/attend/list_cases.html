@@ -142,14 +142,63 @@
                     <p class="edit"><a href="{% url 'edit_case' pk=case.pk %}">Edit</a> | <a href="{% url 'delete_case' pk=case.pk %}">Delete</a></p>
             {% endfor %}
         </td>
+        <td>
+            {% for case in cases %}
+                {% if case.p == 1 %}
+                <div class="flex">
+                    <form class="form">
+                        <label for="attendance"></label><br>
+                        <input type="checkbox" id="attendance" name="attendance" checked><br> <br>
+                    </form>
+                {% else %}
+                <div class="flex">
+                    <form class="form">
+                        <label for="attendance"></label><br>
+                        <input type="checkbox" id="attendance" name="attendance"><br> <br>
+                    </form>
+                {% endif %}
+            {% endfor %}
+        </td>
+        <td>
+            {% for case in cases %}
+                {% if case.a == 1 %}
+                <div class="flex">
+                    <form class="form">
+                        <label for="attendance"></label><br>
+                        <input type="checkbox" id="attendance" name="attendance" checked><br> <br>
+                    </form>
+                {% else %}
+                <div class="flex">
+                    <form class="form">
+                        <label for="attendance"></label><br>
+                        <input type="checkbox" id="attendance" name="attendance"><br> <br>
+                    </form>
+                {% endif %}
+            {% endfor %}
+        </td>
+        <td>
+            {% for case in cases %}
+                {% if case.l == 1 %}
+                <div class="flex">
+                    <form class="form">
+                        <label for="attendance"></label><br>
+                        <input type="checkbox" id="attendance" name="attendance" checked><br> <br>
+                    </form>
+                {% else %}
+                <div class="flex">
+                    <form class="form">
+                        <label for="attendance"></label><br>
+                        <input type="checkbox" id="attendance" name="attendance"><br> <br>
+                    </form>
+                {% endif %}
+            {% endfor %}
+        </td>
 
-        <td>
-            {% for case in cases %}
+        <!-- <td>
                 <form class="form">
                     <label for="attendance"></label><br>
                     <input type="checkbox" id="attendance" name="attendance"><br> <br>
                 </form>
-            {% endfor %}
         </td>
         <td>
             {% for case in cases %}
@@ -166,7 +215,7 @@
                     <input type="checkbox" id="attendance" name="attendance"><br> <br>
                 </form>
             {% endfor %}
-        </td>
+        </td> -->
         <td>
             {% for case in cases %}
                 {% if case.disposition %}
@@ -182,6 +231,7 @@
     </tr>
     
 </table>
+
 
 <!-- <div class="flex flex-wrap">
     {% for case in cases %}
