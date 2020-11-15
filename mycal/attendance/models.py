@@ -14,6 +14,9 @@ class Case(models.Model):
     disposition = models.TextField(max_length=200, null=True, blank=True)
     defense_name = models.CharField(max_length=50, null=True, blank=True)
     continuance = models.DateField(null=True, blank=True)
+    p = models.BooleanField(null=True, blank=True)
+    a = models.BooleanField(null=True, blank=True)
+    l = models.BooleanField(null=True, blank=True)
 
 
     def __str__(self):
