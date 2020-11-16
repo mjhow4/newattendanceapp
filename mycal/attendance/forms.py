@@ -1,3 +1,5 @@
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 from django import forms
 from .models import Case
 
@@ -22,12 +24,14 @@ class CaseForm(forms.ModelForm):
             'l',
     ]
 
-# class DefenseForm(forms.ModelForm):
-#     class Meta:
-#         model = Defense
-#         fields = [
-#             'defense_name',
-#             'continuance',
-#             'plea',
-        
-#     ]
+class CreateUserForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = [
+            'username',
+            'email',
+            'password1',
+            'password2',
+        ]
+
+

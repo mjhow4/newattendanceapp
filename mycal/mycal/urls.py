@@ -20,6 +20,9 @@ from attendance import views as attend_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('register/', attend_views.registerPage, name='register'),
+    path('login/', attend_views.loginPage, name='login'),
+    path('logout/', attend_views.loginPage, name='logout'),
     path('list/', attend_views.list_cases, name='list_cases'),
     path('lista/', attend_views.lista_cases, name='lista_cases'),
     path('listp/', attend_views.listp_cases, name='listp_cases'),
