@@ -21,6 +21,8 @@ from attendance import views as attend_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', attend_views.registerPage, name='register'),
+    path('user/', attend_views.userPage, name='user-page'),
+    path('hub/', attend_views.hub, name='hub'),
     path('login/', attend_views.loginPage, name='login'),
     path('logout/', attend_views.loginPage, name='logout'),
     path('list/', attend_views.list_cases, name='list_cases'),

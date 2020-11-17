@@ -5,7 +5,7 @@
   .menu {text-align: right;}
   body {background-color: rgb(245,245,245);}
 </style>
-<p class="menu"> <a href="{% url 'index' %}">Home</a> | <a href="{% url 'listp_cases' %}">Public</a> | <a href="{% url 'signup' %}">Membership</a> | <a href="{% url 'contact' %}">About</a></p>
+<p class="menu"> <a href="{% url 'index' %}">Home</a> | <a href="{% url 'listp_cases' %}">Public</a> | <a href="{% url 'contact' %}">About</a></p>
 <h1>Welcome to CourtPal!</h1>
 
 Access the Public Calendar View Here: 
@@ -13,30 +13,18 @@ Access the Public Calendar View Here:
   Public Calendar View
 </button>
 
-<h2>Attorneys and Court Clerks <br>
-  Please Login or Signup</h2>
+<h2>Attorneys and Court Officials </h2>
+  <h2>Login Here</h2>
 
-<form>
-  <label for="login">Enter Login ID:</label><br>
-  <input type="email" id="login" name="login"><br> <br>
-  <label for="password">Enter Password:</label><br>
-  <input type="password" id="password" name="password"><br> <br>
-</form>
-<button onclick="window.location.href='{% url 'list_cases' %}';">
-    Court Official Login
+<button onclick="window.location.href='{% url 'login' %}';">
+    Login
   </button>
 
-  <button onclick="window.location.href='{% url 'lista_cases' %}';">
-    Defense Attorney Login
+  <h2>Or Register Here</h2>
+  <button onclick="window.location.href='{% url 'register' %}';">
+    Register
   </button> <br>
-  <p>If you are not a Member, Please: </p>
-  <button onclick="window.location.href='{% url 'signup' %}';">
-    Signup
-  </button>
 
-******************************
-<span><a href="{% url 'logout' %}">Logout</a></span>
-<span>Hello, {{request.user}}</span>
 
 {% endblock %}
 

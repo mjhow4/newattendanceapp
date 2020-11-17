@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
 	<style>
+        .menu {text-align: right;}
 		body,
 		html {
 			margin: 0;
@@ -66,6 +67,7 @@
 	</style>
 
 </head>
+<p class="menu"> <a href="{% url 'index' %}">Home</a> | <a href="{% url 'listp_cases' %}">Public</a> | <a href="{% url 'contact' %}">About</a></p>
 <body>
 	<div class="container h-100">
 		<div class="d-flex justify-content-center h-100">
@@ -82,6 +84,12 @@
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
 							{{form.username}}
+                        </div>
+                        <div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							{{form.first_name}}
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
@@ -124,10 +132,11 @@
 
 		//Query All input fields
 		var form_fields = document.getElementsByTagName('input')
-		form_fields[1].placeholder='Username..';
-		form_fields[2].placeholder='Email..';
-		form_fields[3].placeholder='Enter password...';
-		form_fields[4].placeholder='Re-enter Password...';
+        form_fields[1].placeholder='Username..';
+        form_fields[2].placeholder='Title..';
+		form_fields[3].placeholder='Email..';
+		form_fields[4].placeholder='Enter password...';
+		form_fields[5].placeholder='Re-enter Password...';
 
 
 		for (var field in form_fields){	
