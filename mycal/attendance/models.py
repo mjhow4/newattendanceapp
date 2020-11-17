@@ -9,14 +9,15 @@ class Case(models.Model):
     offense = models.CharField(max_length=100, null=True, blank=True)
     attorney = models.CharField(max_length=50, null=True, blank=True)
     court_date = models.DateField(null=True, blank=True)
-    plea_request = models.TextField(max_length=200, null=True, blank=True)
-    response_by = models.TextField(max_length=200, null=True, blank=True)
-    disposition = models.TextField(max_length=200, null=True, blank=True)
-    defense_name = models.CharField(max_length=50, null=True, blank=True)
-    continuance = models.DateField(null=True, blank=True)
+    plea_request = models.TextField(max_length=200, null=True, blank=True, default="Unrequested")
+    response_by = models.TextField(max_length=200, null=True, blank=True, default="Unresponded")
+    disposition = models.TextField(max_length=200, null=True, blank=True, default="Unresolved")
+    defense_name = models.CharField(max_length=50, null=True, blank=True, default="Undeclared")
+    continuance = models.CharField(max_length=12, null=True, blank=True, default="Unrequested")
     p = models.BooleanField(null=True, blank=True)
     a = models.BooleanField(null=True, blank=True)
     l = models.BooleanField(null=True, blank=True)
+    cont_consent = models.CharField(max_length=12, null=True, blank=True, default="Unresponded")
 
 
     def __str__(self):

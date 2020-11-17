@@ -39,6 +39,9 @@
       Attorney of Record: {{ form.defense_name }}
       <h1>Requests</h1>
       Continuance Request: {{ form.continuance }} <br> <br>
+    
+    
+
       Plea Request: {{ form.plea_request }}
 
 
@@ -46,8 +49,11 @@
         <!-- <button type="submit">Update Case</button> <br> <br> -->
         <button type="submit">Submit</button><br> <br>
         <a href="{% url 'lista_cases' %}">Cancel</a>
+
     </form>
 
+
+   
         <br><br><br><br><br><br>
 
       <div class="hide">
@@ -63,6 +69,7 @@
         {{ form.p }}
         {{ form.a }}
         {{ form.l }}
+        {{form.cont_consent}}
       </div>
 </div>
 {% endblock %}

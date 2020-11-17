@@ -22,6 +22,7 @@ class CaseForm(forms.ModelForm):
             'p',
             'a',
             'l',
+            'cont_consent',
     ]
 
 class CreateUserForm(UserCreationForm):
