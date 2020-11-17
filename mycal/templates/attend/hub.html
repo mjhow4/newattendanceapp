@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .right {text-align: right;}
+    .capitalize {text-transform: capitalize;}
+
+  </style>
+<p class="right"><span><a href="{% url 'logout' %}">Logout</a></span></p>
+<h1>Welcome to CourtPal!</h1>
+
+<div>
+    <span class="capitalize">Hello, {{request.user}},</span>
+    <p>District Attorneys and CourtRoom Clerks:</p>
+  <button onclick="window.location.href='{% url 'list_cases' %}';">
+    Court Official View
+  </button>
+   
+    <p>Defense Attorneys:</p>
+  <button onclick="window.location.href='{% url 'lista_cases' %}';">
+    Defense Attorney View
+  </button>
+
+</div>
+{% endblock %}

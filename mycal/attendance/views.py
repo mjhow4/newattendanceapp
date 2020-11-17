@@ -42,7 +42,7 @@ def loginPage(request):
 
         if user is not None:
             login(request, user)
-            return redirect('index')
+            return redirect('hub')
 
         else:
             messages.info(request, 'Username OR password is incorrect')
@@ -86,7 +86,12 @@ def submit(request):
 
 def contact(request):
     return render(request, "attend\contact.html",)
-        
+
+def contact(request):
+    return render(request, "attend\contact.html",)
+
+def hub(request):
+    return render(request, "attend\hub.html",)       
 
 def add_case(request):
     if request.method == 'GET':
