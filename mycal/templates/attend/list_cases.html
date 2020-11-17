@@ -92,12 +92,12 @@
         </td>
         <td>
             {% for case in cases %}
-                {% if case.defense_name %}
+                {% if case.attorney %}
                 <div class="flex">
-                <div>{{ case.defense_name }}</div>
+                <div>{{ case.attorney }}</div>
                 </div>
                 {% else %}
-                <div>{{ case.attorney }}</div>
+                <div>{{ case.defense_name }}</div>
                 </div>
                 {% endif %}
             {% endfor %}
