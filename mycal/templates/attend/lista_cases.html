@@ -36,8 +36,9 @@
         <th>ATTORNEY</th>
         <!-- <th>COURT DATE</th> -->
         <th>CONT. REQUEST</th>
+        <th>CONSENT</th>
         <th>PLEA REQUEST</th>
-        <th>RESPONSE</th>
+        <th>PLEA RESPONSE</th>
         <th>REQUEST</th>
         <th>PAL</th>
         <th>DISP.</th>
@@ -115,6 +116,15 @@
                 {% if case.continuance %}
                 <div class="flex">
                 <div>{{ case.continuance }}</div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </td>
+        <td>
+            {% for case in cases %}
+                {% if case.cont_consent %}
+                <div class="flex">
+                <div>{{ case.cont_consent }}</div>
                 </div>
                 {% endif %}
             {% endfor %}

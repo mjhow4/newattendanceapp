@@ -14,6 +14,7 @@
     .form {font-size: 3px;}
     .table {margin-left: auto; margin-right: auto;}
     .menu {text-align: right;}
+    .attendance {text-align: center;}
    
 </style>
 <p class="menu"> <a href="{% url 'index' %}">Home</a> | <a href="{% url 'listp_cases' %}">Public</a> | <a href="{% url 'contact' %}">About</a></p>
@@ -33,8 +34,8 @@
         <th>OFFENSE</th>
         <th>ATTORNEY</th>
         <!-- <th>COURT DATE</th> -->
-        <th>CONTINUANCE</th>
-        <th>PAL</th>
+        <!-- <th>CONTINUANCE</th> -->
+        <th>PRESENT ABSENT OR LATE</th>
         <th>DISPOSITION</th>
 
        
@@ -106,7 +107,7 @@
                 {% endif %}
             {% endfor %}
         </td> -->
-        <td>
+        <!-- <td>
             {% for case in cases %}
                 {% if case.continuance %}
                 <div class="flex">
@@ -114,7 +115,7 @@
                 </div>
                 {% endif %}
             {% endfor %}
-        </td>
+        </td> -->
         <td>
             {% for case in cases %}
                 {% if case.p == 1 %}
