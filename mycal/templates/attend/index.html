@@ -4,29 +4,31 @@
 <style>
   .menu {text-align: right;}
   body {background-color: rgb(245,245,245);}
+  .text {text-align: center;}
 
   body {background:url('http://i.huffpost.com/gen/1222717/images/o-NORTH-CAROLINA-CAPITOL-RALEIGH-facebook.jpg'); background-position; height: auto;}
 </style>
 <p class="menu"> <a href="{% url 'index' %}">Home</a> | <a href="{% url 'listp_cases' %}">Public</a> | <a href="{% url 'pal' %}">About</a></p>
+<div class="text">
 <h1>Welcome to CourtPal!</h1>
 
-Access the Public Calendar View Here: 
+<h2>Access Public Calendar View Here: </h2>
 <button onclick="window.location.href='{% url 'listp_cases' %}';">
   Public Calendar View
 </button>
 
 <h2>Attorneys and Court Officials </h2>
-  <h2>Login Here</h2>
+  <h2>Login Here:</h2>
 
 <button onclick="window.location.href='{% url 'login' %}';">
     Login
   </button>
 
-  <h2>Or Register Here</h2>
+  <h2>Register Here:</h2>
   <button onclick="window.location.href='{% url 'register' %}';">
     Register
   </button> <br>
-
+</div>
 
 {% endblock %}
 
