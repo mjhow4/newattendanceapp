@@ -156,26 +156,30 @@
         <td>
             {% for case in cases %}
                 {% if case.p == 1 %}
-                <div class="flex">
+                    Present <br>
+                <!-- <div class="flex">
                     <form class="form">
                         <label for="attendance"></label><br>
                         <input type="color" id="attendance" name="attendance" value="#00FF00"><br> <br>
-                    </form>
+                    </form> -->
                 {% elif case.a == 1 %}
-                    <form class="form">
+                    Absent <br>
+                    <!-- <form class="form">
                         <label for="attendance"></label><br>
                         <input type="color" id="attendance" name="attendance" value="#ff0000"><br> <br>
-                    </form>
+                    </form> -->
                 {% elif case.l == 1 %}
-                    <form class="form">
+                    Late <br>
+                    <!-- <form class="form">
                         <label for="attendance"></label><br>
                         <input type="color" id="attendance" name="attendance" value="#ffff00"><br> <br>
-                    </form>
+                    </form> -->
                 {% else %}
-                    <form class="form">
+                    ---<br>
+                    <!-- <form class="form">
                         <label for="attendance"></label><br>
                         <input type="color" id="attendance" name="attendance" value="#800080"><br> <br>
-                    </form>
+                    </form> -->
                 {% endif %}
             {% endfor %}
         </td>
