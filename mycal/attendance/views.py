@@ -157,9 +157,6 @@ def delete_case(request, pk):
                   {"case": case})   
 
 
-def updateattendance(request):
-    case = get_object_or_404(Case, pk=pk)
-    case.update()
     
 
 
