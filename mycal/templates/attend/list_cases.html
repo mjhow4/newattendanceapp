@@ -161,13 +161,13 @@
                 <div class="flex">
                     <form class="form">
                         <label for="attendance"></label><br>
-                        <input type="checkbox" id="attendance" name="attendance" checked><br> <br>
+                        <input type="checkbox" class="attendance" id="p" name="attendance" checked><br> <br>
                     </form>
                 {% else %}
                 <div class="flex">
                     <form class="form">
                         <label for="attendance"></label><br>
-                        <input type="checkbox" id="attendance" name="attendance"><br> <br>
+                        <input type="checkbox" class="attendance" id="p" name="attendance"><br> <br>
                     </form>
                 {% endif %}
             {% endfor %}
@@ -178,13 +178,13 @@
                 <div class="flex">
                     <form class="form">
                         <label for="attendance"></label><br>
-                        <input type="checkbox" id="attendance" name="attendance" checked><br> <br>
+                        <input type="checkbox" class="attendance" id="a" name="attendance" checked><br> <br>
                     </form>
                 {% else %}
                 <div class="flex">
                     <form class="form">
                         <label for="attendance"></label><br>
-                        <input type="checkbox" id="attendance" name="attendance"><br> <br>
+                        <input type="checkbox" class="attendance" id="a" name="attendance"><br> <br>
                     </form>
                 {% endif %}
             {% endfor %}
@@ -195,13 +195,13 @@
                 <div class="flex">
                     <form class="form">
                         <label for="attendance"></label><br>
-                        <input type="checkbox" id="attendance" name="attendance" checked><br> <br>
+                        <input type="checkbox" class="attendance" id="l" name="attendance" checked><br> <br>
                     </form>
                 {% else %}
                 <div class="flex">
                     <form class="form">
                         <label for="attendance"></label><br>
-                        <input type="checkbox" id="attendance" name="attendance"><br> <br>
+                        <input type="checkbox" class="attendance" id="l" name="attendance"><br> <br>
                     </form>
                 {% endif %}
             {% endfor %}
@@ -311,13 +311,14 @@
 
     </div>
     {% endfor %} -->
-<!-- </div>   -->
-    <!-- <div>
+    <div>
         <label><input type="checkbox" value="p">Present</label>
         <label><input type="checkbox" value="a">Absent</label>
         <label><input type="checkbox" value="l">Late</label>
         <button>Show</button>
         <h1>Result</h1>
 
-    </div> -->
+    </div>
+</div>  
+
 {% endblock %}
