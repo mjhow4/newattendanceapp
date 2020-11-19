@@ -8,7 +8,6 @@ class Case(models.Model):
     complainant = models.CharField(max_length=50, null=True, blank=True)
     offense = models.CharField(max_length=100, null=True, blank=True)
     attorney = models.CharField(max_length=50, null=True, blank=True)
-    court_date = models.DateField(null=True, blank=True)
     plea_request = models.TextField(max_length=200, null=True, blank=True, default="---")
     response_by = models.TextField(max_length=200, null=True, blank=True, default="---")
     disposition = models.TextField(max_length=200, null=True, blank=True, default="---")

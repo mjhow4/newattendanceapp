@@ -13,7 +13,6 @@ class CaseForm(forms.ModelForm):
             'complainant',
             'offense',
             'attorney',
-            'court_date',
             'plea_request',
             'response_by',
             'defense_name',

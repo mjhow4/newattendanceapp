@@ -97,11 +97,8 @@ def submit(request):
 # def edita_case(request):
 #     return render(request, "attend\edita_case.html",)
 
-def contact(request):
-    return render(request, "attend\contact.html",)
-
-def contact(request):
-    return render(request, "attend\contact.html",)
+def pal(request):
+    return render(request, "attend\pal.html",)
 
 def hub(request):
     return render(request, "attend\hub.html",)       
