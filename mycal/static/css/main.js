@@ -1,5 +1,8 @@
-function check() {
-    document.getElementById("attendance").checked = true;
-}
+let btnShow = document.querySelector('button');
+let result = document.querySelector('h1');
 
-check();
+btnShow.addEventListener('click', () => {
+    let checkbox = document.querySelector('input[type="checkbox"]: checked');
+    result.innerText = checkbox.value;
+
+}); 
