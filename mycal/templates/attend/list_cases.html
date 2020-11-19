@@ -44,6 +44,7 @@
         <th>A</th>
         <th>L</th>
         <th>DISP.</th>
+        <!-- <th>TEST</th> -->
 
        
     </thead>
@@ -161,13 +162,13 @@
                 <div class="flex">
                     <form class="form">
                         <label for="attendance"></label><br>
-                        <input type="checkbox" class="attendance" id="p" name="attendance" checked><br> <br>
+                        <input type="checkbox" class="checks" id="p" name="attendance" checked><br> <br>
                     </form>
                 {% else %}
                 <div class="flex">
                     <form class="form">
                         <label for="attendance"></label><br>
-                        <input type="checkbox" class="attendance" id="p" name="attendance"><br> <br>
+                        <input type="checkbox" class="checks" id="p" name="attendance"><br> <br>
                     </form>
                 {% endif %}
             {% endfor %}
@@ -178,13 +179,13 @@
                 <div class="flex">
                     <form class="form">
                         <label for="attendance"></label><br>
-                        <input type="checkbox" class="attendance" id="a" name="attendance" checked><br> <br>
+                        <input type="checkbox" class="checks" id="a" name="attendance" checked><br> <br>
                     </form>
                 {% else %}
                 <div class="flex">
                     <form class="form">
                         <label for="attendance"></label><br>
-                        <input type="checkbox" class="attendance" id="a" name="attendance"><br> <br>
+                        <input type="checkbox" class="checks" id="a" name="attendance"><br> <br>
                     </form>
                 {% endif %}
             {% endfor %}
@@ -195,13 +196,13 @@
                 <div class="flex">
                     <form class="form">
                         <label for="attendance"></label><br>
-                        <input type="checkbox" class="attendance" id="l" name="attendance" checked><br> <br>
+                        <input type="checkbox" class="checks" id="l" name="attendance" checked><br> <br>
                     </form>
                 {% else %}
                 <div class="flex">
                     <form class="form">
                         <label for="attendance"></label><br>
-                        <input type="checkbox" class="attendance" id="l" name="attendance"><br> <br>
+                        <input type="checkbox" class="checks" id="l" name="attendance"><br> <br>
                     </form>
                 {% endif %}
             {% endfor %}
@@ -238,6 +239,15 @@
                 {% endif %}
             {% endfor %}
         </td>
+        <!-- <td>
+               <div class="container">
+        <label><input type="checkbox" class="checks" value="present">P</label>
+        <label><input type="checkbox" class="checks" value="absent">A</label>
+        <label><input type="checkbox" class="checks" value="late">L</label>
+        <a href="#" onclick="getValue();return false;">Get</a>
+        
+    </div>
+        </td> -->
  
         
     </tr>
