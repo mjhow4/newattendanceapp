@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Delete Page</h1>
+
+<div>
+    <form action = "{% url 'delete_pages' pk=album.pk %}" method = "POST">
+        {% csrf_token %}
+        {{ from.as_p }}
+        <p>Are you sure you want to delete {{ page.title }}?</p>
+        <div>
+            <button type = "submit">Delete Page</button><br>
+            <a href = "{% url 'list_pages' %">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %} 
