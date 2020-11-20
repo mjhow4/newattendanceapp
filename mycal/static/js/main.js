@@ -16,7 +16,7 @@ function getValue() {
     
       
     }
-    alert(str)
+    console.log(str)
    
 }
 
