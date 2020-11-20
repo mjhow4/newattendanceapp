@@ -3,22 +3,28 @@
 {% block content %}
 <style>
     .right {text-align: right;}
-    .capitalize {text-transform: capitalize; text-align: left;}
+    .text {text-align: left;}
+    .capitalize {text-transform: capitalize;}
     h1 {color: black;}
+    body {background:url('https://www.nccourts.gov/assets/styles/480x270/s3/2020-02/judicial_branch_seal_columns_0.jpg?wa.XzQ.xoaDI9kj7XLuh9GweBY957VUK&itok=cnAFm7Cj') no-repeat; background-size: cover;}
 
   </style>
+  
 <p class="right"><span><a href="{% url 'logout' %}">Logout</a></span></p>
-<h2 class="capitalize">Hello, {{request.user}}</h2>
-<h1>Welcome to CourtPal!</h1>
 
-<div>
+
+<div class="text">
+    <h2 class="capitalize">Hello, {{request.user}}</h2>
+    <h1>Welcome to CourtPal!</h1>
+
+
     
-    <p>District Attorneys and CourtRoom Clerks:</p>
+    <h2>District Attorneys and CourtRoom Clerks:</h2>
   <button onclick="window.location.href='{% url 'list_cases' %}';">
     Court Official View
   </button>
    
-    <p>Defense Attorneys:</p>
+    <h2>Defense Attorneys:</h2>
   <button onclick="window.location.href='{% url 'lista_cases' %}';">
     Defense Attorney View
   </button>
