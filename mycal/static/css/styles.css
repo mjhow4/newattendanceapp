@@ -1,0 +1,19 @@
+element.style {
+}
+
+html, body {
+    text-align: center;
+    background-color: royalblue;
+    font-family: "Lucida Console", Courier, monospace;
+}
+
+#border{
+    border-style: groove;
+    border-width: 1%;
+    border-left-width: 1%;
+    border-right-width: 1%;
+    background-color: grey;
+    margin: auto;
+    width: 60%;
+    
+}
