@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .menu {text-align: right;}
+    body {background-color: rgb(245,245,245);}
+  </style>
+  <p class="menu"> <a href="{% url 'index' %}">Home</a> | <a href="{% url 'listp_cases' %}">Public</a> | <a href="{% url 'pal' %}">About</a></p>
+  <h1>Signup to CourtPal!</h1>
+<h2>Submit Your Information Below to Apply for Membership.</h2>
+
+<form>
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name"><br> <br>
+    <label for="title">Title:</label><br>
+    <input type="text" id="title" name="title"><br> <br>
+    <label for="barnumber">Bar Number:</label><br>
+    <input type="barnumber" id="barnumber" name="barnumber"><br> <br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br> <br>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password"><br> <br>
+    <label for="password">Confirm Password:</label><br>
+    <input type="password" id="password" name="password"><br> <br>
+  </form>
+
+<button onclick="window.location.href='{% url 'index' %}';">
+    Submit
+  </button> 
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .right {text-align: right;}
+    .text {text-align: left; color:snow;}
+    .capitalize {text-transform: capitalize;}
+    h1 {color: snow;}
+    body {background:url('https://i.ytimg.com/vi/HkXT7QT72sc/maxresdefault.jpg') no-repeat; background-size: cover;}
+
+  </style>
+  
+<p class="right"><span><a href="{% url 'logout' %}">Logout</a></span></p>
+
+
+<div class="text">
+    <h2 class="capitalize">Hello, {{request.user}}</h2>
+    <h1>Welcome to CourtPal!</h1>
+
+
+    
+    <h2>District Attorneys and CourtRoom Clerks:</h2>
+  <button onclick="window.location.href='{% url 'list_cases' %}';">
+    Court Official View
+  </button>
+   
+    <h2>Defense Attorneys:</h2>
+  <button onclick="window.location.href='{% url 'lista_cases' %}';">
+    Defense Attorney View
+  </button>
+
+</div>
+{% endblock %}

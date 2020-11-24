@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .menu {text-align: right;}
+    body {background-color: rgb(245,245,245);}
+    h1 {color: black;}
+    body {background:url('https://www.conceptdraw.com/How-To-Guide/picture/Geo-map-USA-North-Carolina.png') no-repeat center; background-position: center; background-size: 1250px;}
+
+  </style>
+<p class="menu"> <a href="{% url 'index' %}">Home</a> | <a href="{% url 'listp_cases' %}">Public</a> | <a href="{% url 'pal' %}">About</a></p>
+<h1>CourtPal Team</h1>  
+<p>Marlon Howard, Durham, NC <br>
+Hasani Baker, Compton, CA <br>
+Nicholas Coleman, Atlanta, GA</p>
+
+
+<h1>About CourtPal</h1>
+
+<div>
+    <p>CourtPal is a Court Calendar System that allows direct communication between 
+        The District Attorney, Defense Attorney, and the Court Clerk.<br> Members of the Public
+        are also allow a limited view of CourtPal, which includes items that are customarily
+        included on a Court Calendar in addition <br> to the PAL System updated in real time.
+    </p>
+
+    <h3>The PAL System</h3>
+    <p>PAL stands for Present, Absent, or Late. As the District Attorney is conducting Calendar Call the District
+        Attorney can easily check off whether someone is <br> P - Present, A - Absent, or L - Late. As the Distict Attorney
+        checks off the list for each Defendant, the CourtRoom Clerk, who has access to the same view as <br> the District Attorney,
+        CourtPal is updated immediately. The Defense Attorney View and the Public Calendar View is also updated immediately. 
+        This allows the <br> Defense Attorney and Public to immediately know if Defendant has been marked Present, Absent, or
+        Late. This can allow attendance errors to be addressed immediately <br> and those running late to plan accordingly.
+    </p>
+ 
+    <h1>Benefits of using CourtPal</h1>
+
+    <p>All parties involved benefit from the use of CourtPal.</p>
+
+    <h3>District Attorney</h3>
+    <ul>
+        <li>Can address easy continuances and easy plea requests prior to Court</li>
+        <li>Direct Communication with Defense Attorney without Office Visits, Phone Calls, Emails, or Fax</li>
+        <li>Can easily check off whether Defendant is PAL (Present, Absent, Late) and easily switch between those options</li>
+      </ul>
+
+    <h3>Defense Attorney</h3>
+    <ul>
+        <li>Can easily resolve continuances and simple plea requests prior to Court</li>
+        <li>Direct Communication with District Attorney without Office Visits, Phone Calls, Emails, or Fax</li>
+        <li>Can see immediately if client is PAL (Present, Absent, Late)</li>
+        <li>Can prioritize which court rooms to visit based on which client is present versus visiting all court rooms and 
+            calling clients to see if they are present
+        </li>
+        <li>Can see immediately if client has Failure to Appear (FTA) and Order For Arrest (OFA) without having to
+            contact or visit the Clerk's Office
+        </li>
+        <li>Fewer distracting office visits and phone calls from clients requesting information that is immediately available on 
+            CourtPal such as: <br> When is my next Court Date? Do I have an OFA? How much do I owe in Court Costs and Fines?
+        </li>
+      </ul>
+    <h3>CourtRoom Clerk</h3>
+      <ul>
+          <li>Immediate access to District Attorney's entries therefore free to work on other items during Calendar Call</li>
+          <li>Can easily enter Case Disposition directly on CourtPal and is available immediately</li>
+          <li>Fewer distracting visits and phone calls from Attorneys and Pro Se Defendants since key information is immediately avaialble on CourtPal</li>
+        </ul>
+    <h3>Public</h3>
+        <ul>
+            <li>Can freely access CourtPal's Public Calendar View immediately without Login or Registration</li>
+            <li>If running late for Court can immediately see if they have missed First Calendar Call</li>
+            <li>Instant access to the Official Disposition of their case</li>
+            <li>If Defendant has missed Court, Defendant can view the Calendar and immediately know if there was an OFA issued</li>
+          </ul>
+     
+
+    
+</div>
+{% endblock %}

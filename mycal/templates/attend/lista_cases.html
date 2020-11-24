@@ -1,8 +1,6 @@
 {% extends "base.html" %}
-{% load static %}
 
 {% block content %}
-
 <style>
     body {background-color: rgb(245,245,245);}
     h2   {color: black;}
@@ -12,14 +10,16 @@
     .left {text-align: left;}
     .center {text-align: center;}
     .form {font-size: 3px;}
-    .purple {border: purple;}
-    .purple {background-color: purple;}
-    .edit {font-size: .65pc;}
+    .edit {font-size: .7pc;}
+    .form {font-size: 3px;}
     .table {margin-left: auto; margin-right: auto;}
+   
+
+    
 
 </style>
-<p class="right"><a href="{% url 'add_case' %}">New Entry</a> | <span><a href="{% url 'logout' %}">Logout</a></span></p>
-<p class="right">Court Official View</p>
+<p class="right"><span><a href="{% url 'logout' %}">Logout</a></span></p>
+<p class="right">Defense Attorney View</p>
 
 
 <h2>-- IN THE GENERAL COURT OF JUSTICE --</h2>
@@ -38,14 +38,10 @@
         <th>CONT. REQUEST</th>
         <th>CONSENT</th>
         <th>PLEA REQUEST</th>
-        <th>RESPONSE</th>
-        <th>ALTER</th>
-        <th>P</th>
-        <th>A</th>
-        <th>L</th>
+        <th>PLEA RESPONSE</th>
+        <th>REQUEST</th>
+        <th>PAL</th>
         <th>DISP.</th>
-        <!-- <th>TEST</th> -->
-
        
     </thead>
     <tr>
@@ -153,83 +149,40 @@
         </td>
         <td>
             {% for case in cases %}
-                    <p class="edit"><a href="{% url 'edit_case' pk=case.pk %}">Edit</a> | <a href="{% url 'delete_case' pk=case.pk %}">Delete</a></p>
-            {% endfor %}
-        </td>
-        <td>
-            {% for case in cases %}
-            {% if case.p == 1 %}
-            <div class="flex">
-                <form class="form">
-                    <label for="attendance"></label><br>
-                    <input type="checkbox" class="checks" id="p" name="attendance" checked><br> <br>
-                </form>
-            {% else %}
-            <div class="flex">
-                <form class="form">
-                    <label for="attendance"></label><br>
-                    <input type="checkbox" class="checks" id="p" name="attendance"><br> <br>
-                </form>
-            {% endif %}
-        {% endfor %}
-        </td>
-        <td>
-            {% for case in cases %}
-            {% if case.a == 1 %}
-            <div class="flex">
-                <form class="form">
-                    <label for="attendance"></label><br>
-                    <input type="checkbox" class="checks" id="a" name="attendance" checked><br> <br>
-                </form>
-            {% else %}
-            <div class="flex">
-                <form class="form">
-                    <label for="attendance"></label><br>
-                    <input type="checkbox" class="checks" id="a" name="attendance"><br> <br>
-                </form>
-            {% endif %}
-        {% endfor %}
-        </td>
-        <td>
-            {% for case in cases %}
-                {% if case.l == 1 %}
-                <div class="flex">
-                    <form class="form">
-                        <label for="attendance"></label><br>
-                        <input type="checkbox" class="checks" id="l" name="attendance" checked><br> <br>
-                    </form>
-                {% else %}
-                <div class="flex">
-                    <form class="form">
-                        <label for="attendance"></label><br>
-                        <input type="checkbox" class="checks" id="l" name="attendance"><br> <br>
-                    </form>
-                {% endif %}
+                    <p class="edit"><a href="{% url 'edita_case' pk=case.pk %}">Request</a></p>
             {% endfor %}
         </td>
 
-        <!-- <td>
-                <form class="form">
-                    <label for="attendance"></label><br>
-                    <input type="checkbox" id="attendance" name="attendance"><br> <br>
-                </form>
-        </td>
         <td>
             {% for case in cases %}
-                <form class="form">
-                    <label for="attendance"></label><br>
-                    <input type="checkbox" id="attendance" name="attendance"><br> <br>
-                </form>
+                {% if case.p == 1 %}
+                    Present <br>
+                <!-- <div class="flex">
+                    <form class="form">
+                        <label for="attendance"></label><br>
+                        <input type="color" id="attendance" name="attendance" value="#00FF00"><br> <br>
+                    </form> -->
+                {% elif case.a == 1 %}
+                    Absent <br>
+                    <!-- <form class="form">
+                        <label for="attendance"></label><br>
+                        <input type="color" id="attendance" name="attendance" value="#ff0000"><br> <br>
+                    </form> -->
+                {% elif case.l == 1 %}
+                    Late <br>
+                    <!-- <form class="form">
+                        <label for="attendance"></label><br>
+                        <input type="color" id="attendance" name="attendance" value="#ffff00"><br> <br>
+                    </form> -->
+                {% else %}
+                    ---<br>
+                    <!-- <form class="form">
+                        <label for="attendance"></label><br>
+                        <input type="color" id="attendance" name="attendance" value="#800080"><br> <br>
+                    </form> -->
+                {% endif %}
             {% endfor %}
         </td>
-        <td>
-            {% for case in cases %}
-                <form class="form">
-                    <label for="attendance"></label><br>
-                    <input type="checkbox" id="attendance" name="attendance"><br> <br>
-                </form>
-            {% endfor %}
-        </td> -->
         <td>
             {% for case in cases %}
                 {% if case.disposition %}
@@ -239,21 +192,10 @@
                 {% endif %}
             {% endfor %}
         </td>
-        <!-- <td>
-               <div class="container">
-        <label><input type="checkbox" class="checks" value="present">P</label>
-        <label><input type="checkbox" class="checks" value="absent">A</label>
-        <label><input type="checkbox" class="checks" value="late">L</label>
-        <a href="#" onclick="getValue();return false;">Get</a>
-        
-    </div>
-        </td> -->
- 
         
     </tr>
     
 </table>
-
 
 <!-- <div class="flex flex-wrap">
     {% for case in cases %}
@@ -321,14 +263,5 @@
 
     </div>
     {% endfor %} -->
-    <!-- <div>
-        <label><input type="checkbox" value="p">Present</label>
-        <label><input type="checkbox" value="a">Absent</label>
-        <label><input type="checkbox" value="l">Late</label>
-        <button>Show</button>
-        <h1>Result</h1>
-
-    </div> -->
-</div>  
-
+<!-- </div>   -->
 {% endblock %}

@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    body {background-color: rgb(245,245,245);}
+    h2   {color: black;}
+    h2 {text-align: center;}
+    p    {color: black;}
+    .right {text-align: right;}
+    .left {text-align: left;}
+    .center {text-align: center;}
+    .form {font-size: 3px;}
+    .edit {font-size: .7pc;}
+    .form {font-size: 3px;}
+    .table {margin-left: auto; margin-right: auto;}
+    .menu {text-align: right;}
+    .attendance {text-align: center;}
+   
+</style>
+<p class="menu"> <a href="{% url 'index' %}">Home</a> | <a href="{% url 'listp_cases' %}">Public</a> | <a href="{% url 'pal' %}">About</a></p>
+<p class="right">Public Calendar View</p>
+
+
+<h2>-- IN THE GENERAL COURT OF JUSTICE --</h2>
+<h2>LOCATION: KINSTON, NC -- DISTRICT COURT DIVISION -- COUNTY OF LENOIR</h2>
+<h2>COURT DATE: 12/02/20 -- TIME: 02:00 PM -- COURTROOM NUMBER: DCR1</h2>
+
+<table class="table" border="1">
+    <thead>
+        <th>NO.</th>
+        <th>FILE NUMBER</th>
+        <th>DEFENDANT</th>
+        <th>COMPLAINANT</th>
+        <th>OFFENSE</th>
+        <th>ATTORNEY</th>
+        <!-- <th>COURT DATE</th> -->
+        <!-- <th>CONTINUANCE</th> -->
+        <th>PAL</th>
+        <th>DISPOSITION</th>
+
+       
+    </thead>
+    <tr>
+        <td>
+            {% for case in cases %}
+                {% if case.no %}
+                <div class="flex">
+                <div>{{ case.no }}</div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </td>
+        <td>
+            {% for case in cases %}
+                {% if case.file_number %}
+                <div class="flex">
+                <div>{{ case.file_number }}</div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </td>
+        <td>
+            {% for case in cases %}
+                {% if case.defendant %}
+                <div class="flex">
+                <div>{{ case.defendant }}</div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </td>
+        <td>
+            {% for case in cases %}
+                {% if case.complainant %}
+                <div class="flex">
+                <div>{{ case.complainant }}</div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </td>
+        <td>
+            {% for case in cases %}
+                {% if case.offense %}
+                <div class="flex">
+                <div>{{ case.offense }}</div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </td>
+        <td>
+            {% for case in cases %}
+                {% if case.attorney %}
+                <div class="flex">
+                <div>{{ case.attorney }}</div>
+                </div>
+                {% else %}
+                <div>{{ case.defense_name }}</div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </td>
+        <!-- <td>
+            {% for case in cases %}
+                {% if case.court_date %}
+                <div class="flex">
+                <div>{{ case.court_date }}</div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </td> -->
+        <!-- <td>
+            {% for case in cases %}
+                {% if case.continuance %}
+                <div class="flex">
+                <div>{{ case.continuance }}</div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </td> -->
+        <td>
+            {% for case in cases %}
+                {% if case.p == 1 %}
+                    Present <br>
+                <!-- <div class="flex">
+                    <form class="form">
+                        <label for="attendance"></label><br>
+                        <input type="color" id="attendance" name="attendance" value="#00FF00"><br> <br>
+                    </form> -->
+                {% elif case.a == 1 %}
+                    Absent <br>
+                    <!-- <form class="form">
+                        <label for="attendance"></label><br>
+                        <input type="color" id="attendance" name="attendance" value="#ff0000"><br> <br>
+                    </form> -->
+                {% elif case.l == 1 %}
+                    Late <br>
+                    <!-- <form class="form">
+                        <label for="attendance"></label><br>
+                        <input type="color" id="attendance" name="attendance" value="#ffff00"><br> <br>
+                    </form> -->
+                {% else %}
+                    ---<br>
+                    <!-- <form class="form">
+                        <label for="attendance"></label><br>
+                        <input type="color" id="attendance" name="attendance" value="#800080"><br> <br>
+                    </form> -->
+                {% endif %}
+            {% endfor %}
+        </td>
+        <td>
+            {% for case in cases %}
+                {% if case.disposition %}
+                <div class="flex">
+                <div>{{ case.disposition }}</div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </td>
+        
+    </tr>
+    
+</table>
+
+{% endblock %}

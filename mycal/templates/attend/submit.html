@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .menu {text-align: right;}
+    body {background-color: rgb(245,245,245);}
+    h1 {color: snow;}
+    h2 {color: snow;}
+    body {background:url('https://i.ytimg.com/vi/HkXT7QT72sc/maxresdefault.jpg') no-repeat; background-size: cover;}
+
+  </style>
+ 
+<h1>We Have Received Your Submission!</h1>
+
+<div>
+    <h2>To continue please select the appropriate view:</h2>
+    <button onclick="window.location.href='{% url 'list_cases' %}';">
+        Court Official View
+      </button>
+    
+      <button onclick="window.location.href='{% url 'lista_cases' %}';">
+        Defense Attorney View
+      </button> <br>
+
+    <h2>If You Are Finished Please:</h2>
+    <button onclick="window.location.href='{% url 'logout' %}';">
+        Logout
+      </button> <br>
+    
+</div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .right {text-align: right;}
+    body {background-color: rgb(245,245,245);}
+    .hide {opacity: 0;}
+  </style>
+<p class="right">Court Official View</p>
+<h2>Edit Case Entry</h2>
+
+<div>
+    <form action="{% url 'edit_case' pk=case.pk %}" method="POST">
+      {% csrf_token %}
+      <!-- {{ form.as_p }} -->
+      No. {{ form.no }} <br><br>
+      FILE NUMBER: {{ form.file_number }} <br><br>
+      DEFENDANT: {{ form.defendant }} <br><br>
+      COMPLAINANT: {{ form.complainant }} <br><br>
+      OFFENSE: {{ form.offense }} <br><br>
+      ATTORNEY: {{ form.attorney }} <br><br>
+      CONSENT TO CONTINUANCE REQUEST: {{ form.cont_consent }} <br><br>
+      RESPONSE: {{ form.response_by }} <br><br>
+      DISPOSITION: {{ form.disposition }} <br><br>
+      PRESENT: {{ form.p }} <br><br>
+      ABSENT: {{ form.a }} <br><br>
+      LATE: {{ form.l }} <br><br>
+      
+  
+
+
+      <div> <br>
+        <!-- <button type="submit">Update Case</button> <br> <br> -->
+        <button type="submit">Submit</button><br> <br>
+        <a href="{% url 'list_cases' %}">Cancel</a>
+    </form>
+
+        <br><br><br><br><br><br>
+
+      <div class="hide">
+        <h1>Declare Attorney of Record</h1>
+        Attorney of Record: {{ form.defense_name }}
+        <h1>Requests</h1>
+        Continuance Request: {{ form.continuance }} <br> <br>
+        Plea Request: {{ form.plea_request }}
+      </div>
+</div>
+{% endblock %}
