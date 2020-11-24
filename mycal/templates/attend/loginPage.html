@@ -10,18 +10,19 @@
 
 	<style>
         .menu {text-align: right;}
+        .white {color: snow;}
 		body,
 		html {
 			margin: 0;
 			padding: 0;
 			height: 100%;
-			background: #7abecc !important;
+			background: snow !important;
 		}
 		.user_card {
 			width: 350px;
 			margin-top: auto;
 			margin-bottom: auto;
-			background: #74cfbf;
+			background: navy;
 			position: relative;
 			display: flex;
 			justify-content: center;
@@ -45,7 +46,7 @@
 
 		.login_btn {
 			width: 100%;
-			background: #33ccff !important;
+			background: slategray !important;
 			color: white !important;
 		}
 		.login_btn:focus {
@@ -114,7 +115,7 @@
                 {% endfor %}
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links">
-						Don't have an account? <a href="{% url 'register' %}" class="ml-2">Sign Up</a>
+						<p class="white">Don't have an account? </p> <a href="{% url 'register' %}" class="ml-2">Sign Up</a>
 					</div>
 			
 				</div>

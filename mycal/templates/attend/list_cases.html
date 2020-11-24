@@ -158,37 +158,37 @@
         </td>
         <td>
             {% for case in cases %}
-                {% if case.p == 1 %}
-                <div class="flex">
-                    <form class="form">
-                        <label for="attendance"></label><br>
-                        <input type="checkbox" class="checks" id="p" name="attendance" checked><br> <br>
-                    </form>
-                {% else %}
-                <div class="flex">
-                    <form class="form">
-                        <label for="attendance"></label><br>
-                        <input type="checkbox" class="checks" id="p" name="attendance"><br> <br>
-                    </form>
-                {% endif %}
-            {% endfor %}
+            {% if case.p == 1 %}
+            <div class="flex">
+                <form class="form">
+                    <label for="attendance"></label><br>
+                    <input type="checkbox" class="checks" id="p" name="attendance" checked><br> <br>
+                </form>
+            {% else %}
+            <div class="flex">
+                <form class="form">
+                    <label for="attendance"></label><br>
+                    <input type="checkbox" class="checks" id="p" name="attendance"><br> <br>
+                </form>
+            {% endif %}
+        {% endfor %}
         </td>
         <td>
             {% for case in cases %}
-                {% if case.a == 1 %}
-                <div class="flex">
-                    <form class="form">
-                        <label for="attendance"></label><br>
-                        <input type="checkbox" class="checks" id="a" name="attendance" checked><br> <br>
-                    </form>
-                {% else %}
-                <div class="flex">
-                    <form class="form">
-                        <label for="attendance"></label><br>
-                        <input type="checkbox" class="checks" id="a" name="attendance"><br> <br>
-                    </form>
-                {% endif %}
-            {% endfor %}
+            {% if case.a == 1 %}
+            <div class="flex">
+                <form class="form">
+                    <label for="attendance"></label><br>
+                    <input type="checkbox" class="checks" id="a" name="attendance" checked><br> <br>
+                </form>
+            {% else %}
+            <div class="flex">
+                <form class="form">
+                    <label for="attendance"></label><br>
+                    <input type="checkbox" class="checks" id="a" name="attendance"><br> <br>
+                </form>
+            {% endif %}
+        {% endfor %}
         </td>
         <td>
             {% for case in cases %}
