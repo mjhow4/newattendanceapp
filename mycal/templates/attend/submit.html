@@ -4,24 +4,25 @@
 <style>
     .menu {text-align: right;}
     body {background-color: rgb(245,245,245);}
-    h1 {color: black;}
-    body {background:url('https://www.nccourts.gov/assets/styles/480x270/s3/2018-06/youtube_placeholder.png?2YHxE6oiAd3XrJRUYW8X7ww3pjeJBy4c&itok=zrPRs8k-') no-repeat; background-size: cover;}
+    h1 {color: snow;}
+    h2 {color: snow;}
+    body {background:url('https://i.ytimg.com/vi/HkXT7QT72sc/maxresdefault.jpg') no-repeat; background-size: cover;}
 
   </style>
  
 <h1>We Have Received Your Submission!</h1>
 
 <div>
-    To continue please select the appropriate view:
+    <h2>To continue please select the appropriate view:</h2>
     <button onclick="window.location.href='{% url 'list_cases' %}';">
         Court Official View
       </button>
     
       <button onclick="window.location.href='{% url 'lista_cases' %}';">
         Defense Attorney View
-      </button> <br><br>
+      </button> <br>
 
-    If You Are Finished Please:
+    <h2>If You Are Finished Please:</h2>
     <button onclick="window.location.href='{% url 'logout' %}';">
         Logout
       </button> <br>
