@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponseRedirect
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.forms import inlineformset_factory
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
@@ -10,6 +10,7 @@ from django.contrib.auth.models import Group
 from .models import Case
 from .forms import CaseForm, CreateUserForm
 from .decorators import unauthenticated_user, allowed_users
+import json
 
 # Create your views here.
 
@@ -157,6 +158,35 @@ def delete_case(request, pk):
 
     return render(request, "attend/delete_case.html",
                   {"case": case})   
+
+def update_pal(request):
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+       
+        data = json.load(request)
+        pk = data['pk']
+        pal=data['type']
+        case = get_object_or_404(Case, pk=pk)
+        if pal == "present":
+            case.p = True
+            case.a = False
+            case.l = False
+            case.save()
+            return JsonResponse({"status":"present"})
+        elif pal == "absent":
+            case.p = False
+            case.a = True
+            case.l = False
+            case.save()
+            return JsonResponse({"status":"absent"})
+        elif pal == "late":
+            case.p = False
+            case.a = False
+            case.l = True
+            case.save()
+            return JsonResponse({"status":"late"})
+    return JsonResponse({"status":"ok"})
+    
+
 
 
     

@@ -43,5 +43,6 @@ urlpatterns = [
         path('attend/<int:pk>/edita/',
          attend_views.edita_case,
          name='edita_case'),
+    path('list/update-pal/', attend_views.update_pal, name='update_pal')
     
 ]
