@@ -158,78 +158,32 @@
         </td>
         <td>
             {% for case in cases %}
-            {% if case.p == 1 %}
             <div class="flex">
                 <form class="form">
                     <label for="attendance"></label><br>
-                    <input type="checkbox" class="checks" id="p" name="attendance" checked><br> <br>
+                    <input type="checkbox" class="checks" data-pk="{{case.pk}}" id="p" name="present"><br> <br>
                 </form>
-            {% else %}
-            <div class="flex">
-                <form class="form">
-                    <label for="attendance"></label><br>
-                    <input type="checkbox" class="checks" id="p" name="attendance"><br> <br>
-                </form>
-            {% endif %}
         {% endfor %}
         </td>
         <td>
             {% for case in cases %}
-            {% if case.a == 1 %}
             <div class="flex">
                 <form class="form">
                     <label for="attendance"></label><br>
-                    <input type="checkbox" class="checks" id="a" name="attendance" checked><br> <br>
+                    <input type="checkbox" class="checks" data-pk="{{case.pk}}" id="a" name="absent"><br> <br>
                 </form>
-            {% else %}
-            <div class="flex">
-                <form class="form">
-                    <label for="attendance"></label><br>
-                    <input type="checkbox" class="checks" id="a" name="attendance"><br> <br>
-                </form>
-            {% endif %}
         {% endfor %}
         </td>
         <td>
             {% for case in cases %}
-                {% if case.l == 1 %}
-                <div class="flex">
-                    <form class="form">
-                        <label for="attendance"></label><br>
-                        <input type="checkbox" class="checks" id="l" name="attendance" checked><br> <br>
-                    </form>
-                {% else %}
-                <div class="flex">
-                    <form class="form">
-                        <label for="attendance"></label><br>
-                        <input type="checkbox" class="checks" id="l" name="attendance"><br> <br>
-                    </form>
-                {% endif %}
-            {% endfor %}
+            <div class="flex">
+                <form class="form">
+                    <label for="attendance"></label><br>
+                    <input type="checkbox" class="checks" data-pk="{{case.pk}}" id="l" name="late"><br> <br>
+                </form>
+        {% endfor %}
         </td>
 
-        <!-- <td>
-                <form class="form">
-                    <label for="attendance"></label><br>
-                    <input type="checkbox" id="attendance" name="attendance"><br> <br>
-                </form>
-        </td>
-        <td>
-            {% for case in cases %}
-                <form class="form">
-                    <label for="attendance"></label><br>
-                    <input type="checkbox" id="attendance" name="attendance"><br> <br>
-                </form>
-            {% endfor %}
-        </td>
-        <td>
-            {% for case in cases %}
-                <form class="form">
-                    <label for="attendance"></label><br>
-                    <input type="checkbox" id="attendance" name="attendance"><br> <br>
-                </form>
-            {% endfor %}
-        </td> -->
         <td>
             {% for case in cases %}
                 {% if case.disposition %}
@@ -239,96 +193,11 @@
                 {% endif %}
             {% endfor %}
         </td>
-        <!-- <td>
-               <div class="container">
-        <label><input type="checkbox" class="checks" value="present">P</label>
-        <label><input type="checkbox" class="checks" value="absent">A</label>
-        <label><input type="checkbox" class="checks" value="late">L</label>
-        <a href="#" onclick="getValue();return false;">Get</a>
-        
-    </div>
-        </td> -->
- 
-        
+
     </tr>
     
 </table>
 
-
-<!-- <div class="flex flex-wrap">
-    {% for case in cases %}
-      
-
-      {% if case.no %}
-      <div class="flex">
-        <div>No. {{ case.no }}</div>
-      </div>
-      {% endif %}
-
-      {% if case.file_number %}
-      <div class="flex">
-        <div>File Number: {{ case.file_number }}</div>
-      </div>
-      {% endif %}
-
-      {% if case.defendant_name %}
-      <div class="flex">
-        <div>Defendant Name: {{ case.defendant_name }}</div>
-      </div>
-      {% endif %}
-
-      {% if case.complainant %}
-      <div class="flex">
-        <div>Complainant: {{ case.complainant }}</div>
-      </div>
-      {% endif %}
-
-      {% if case.offense %}
-      <div class="flex">
-        <div>Offense: {{ case.offense }}</div>
-      </div>
-      {% endif %}
-      
-      {% if case.attorney %}
-      <div class="flex">
-        <div>Attorney:  {{ case.attorney }}</div>
-      </div>
-      {% endif %}
-
-      {% if case.continuance_request %}
-      <div class="flex">
-        <div>Continuance Request:  {{ case.continuance_request }}</div>
-      </div>
-      {% endif %}
-
-  
-      {% if case.plea_request %}
-      <div class="flex">
-        <div>Plea Request: {{ case.plea_request }}</div>
-      </div>
-      {% endif %}
-
-      {% if case.response_by %}
-      <div class="flex">
-        <div>Approved/Denied By: {{ case.response_by }}</div>
-      </div>
-      {% endif %}
-     
-
-      <p>
-        <p><a href="{% url 'edit_case' pk=case.pk %}">Edit Case</a> | <a href="{% url 'delete_case' pk=case.pk %}">Delete Case</a></p>
-      </p>
-
-    </div>
-    {% endfor %} -->
-    <!-- <div>
-        <label><input type="checkbox" value="p">Present</label>
-        <label><input type="checkbox" value="a">Absent</label>
-        <label><input type="checkbox" value="l">Late</label>
-        <button>Show</button>
-        <h1>Result</h1>
-
-    </div> -->
 </div>  
 
 {% endblock %}
